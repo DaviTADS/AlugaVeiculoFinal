@@ -54,7 +54,7 @@ public abstract class Pessoa implements Serializable {
     @Size(max = 30, min = 3)
     @Pattern(regexp = "\\p{Upper}{1}\\p{Lower}+", message = "{com.mycompany.alugaveiculo.Pessoa.nome}")
     @Column(name = "TXT_NOME", length = 30, nullable = false)
-    protected String nome;
+    public String nome;
     
     @NotBlank
     @Pattern(regexp = "((?=.*\\p{Digit})(?=.*\\p{Lower})(?=.*\\p{Upper})(?=.*\\p{Punct}).{8})", 

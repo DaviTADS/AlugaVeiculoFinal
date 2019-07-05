@@ -7,20 +7,33 @@
     </h:head>
     <h:body>
         <h:form id="Pessoaf">            
-            
+            <p:growl id="growl" life="3500" autoUpdate="true"/>
             <p:panel id="panel" header="Cadastro de PessoaFisica" footer="Aluguel de Veiculos">
                 <h:panelGrid columns="2" cellpadding="5">
-                    <h:outputLabel for="primeiroNome" value="Primeiro Nome: " />
-                    <p:inputText id="primeiroNome" value="" label="Primeiro nome" required="true" maxlength="20"/>
+                    
+                    <h:outputLabel for="primeiroNome" value="Primeiro Nome: "/>
+                    <p:inputText id="primeiroNome" value="#{PessoaF.pf.nome}" label="Primeiro nome" required="true" maxlength="20"/>
 
                     <h:outputLabel for="ultimoNome" value="Último Nome: " />
-                    <p:inputText id="ultimoNome" value="" label="Último nome" required="true" maxlength="20"/>
+                    <p:inputText id="ultimoNome" value="#{PessoaF.pf.sobrenome}" label="Último nome" required="true" maxlength="20"/>
 
                     <h:outputLabel for="cpf" value="CPF: " />
-                    <p:inputMask id="cpf" value="" label="CPF" mask="999.999.999-99" required="true" maxlength="14"/>
+                    <p:inputMask id="cpf" value="#{PessoaF.pf.cpf}" label="CPF" mask="999.999.999-99" required="true" maxlength="14"/>
+                    
+                    <h:outputLabel for="email" value="E-mail: " />
+                    <p:inputText id="email" value="#{PessoaF.pf.email}" label="email" required="true" maxlength="20"/>
+                    
+                    <h:outputLabel for="senha" value="Senha: " />
+                    <p:inputText id="senha" value="#{PessoaF.pf.senha}" type="password" label="senha" required="true" maxlength="20"/>
+                    
+ 
+                    <h:outputLabel for="credito" value="Creditos: " />
+                    <p:inputText id="credito" value="#{PessoaF.pf.creditos}" label="credito" required="true" maxlength="20"/>
+                    
+                    
                 </h:panelGrid>
-                <p:commandButton action="#{PessoaF.pessoafbean.consultarPessoaFPorId(2)}" value="Salvar" title="Salvar Pessoa Fisica" icon="ui-icon-check" validateClient="true"/>
-                <h:outputText value="#{PessoaF.pessoafbean.imprimeNome(2)}"/>
+                <p:commandButton action="#{PessoaF.Salvar()}" value="Salvar" ajax="true" update="growl, panel" title="Salvar Pessoa Fisica" icon="ui-icon-check" validateClient="true"/>
+                
             </p:panel>
             
         </h:form>

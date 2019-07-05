@@ -2,6 +2,7 @@
 package alugaveiculoweb.beans;
 
 import alugaveiculoweb.entidades.PessoaFisica;
+import javax.annotation.security.PermitAll;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
@@ -30,12 +31,14 @@ public class PessoaFisicaBean {
         return !query.getResultList().isEmpty();
     }
     
+    //@PermitAll
     public void persistirPessoaF(PessoaFisica pessoaf) {
 
         em.persist(pessoaf);
     }
     
     @TransactionAttribute(SUPPORTS)
+    //@PermitAll
     public PessoaFisica criarPessoaf() {
 
         return new PessoaFisica();
