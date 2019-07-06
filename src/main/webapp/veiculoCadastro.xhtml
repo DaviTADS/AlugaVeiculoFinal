@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:h="http://xmlns.jcp.org/jsf/html" 
+      xmlns:p="http://primefaces.org/ui" xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Cadastro Veiculo</title>
+    </h:head>
+    <h:body>
+        <h:form id="veiculo">            
+            <p:growl id="growl" life="3500" autoUpdate="true"/>
+            <p:panel id="panel" header="Cadastro de Veiculo" footer="Aluguel de Veiculos">
+                <h:panelGrid columns="2" cellpadding="5">
+                    
+                    <h:outputLabel for="modelo" value="Modelo Veiculo: "/>
+                    <p:inputText id="modelo" value="#{veiculoB.vei.modelo}" label="Modelo Veiculo" required="true" maxlength="20"/>
+
+                    <h:outputLabel for="fabricante" value="Fabricante: " />
+                    <p:inputText id="fabricante" value="#{veiculoB.vei.fabricante}" label="Fabricante" required="true" maxlength="20"/>
+
+                    <h:outputLabel for="anofabricacao" value="Ano de Fabricação: " />
+                    <p:inputText id="anofabricacao" value="#{veiculoB.vei.anofabricacao}" label="Ano de Fabricação:" required="true" maxlength="14"/>
+                    
+                    <h:outputLabel for="capacidade" value="Capacidade: " />
+                    <p:inputText id="capacidade" value="#{veiculoB.vei.capacidade}" label="Capacidade" required="true" maxlength="20"/>
+                    
+                    <h:outputLabel for="descricao" value="Descrição: " />
+                    <p:inputText id="descricao" value="#{veiculoB.vei.descricao}" label="Descrição" required="true" maxlength="20"/>
+                    
+                    <h:outputLabel for="tipo" value="Tipo: " />
+                    <p:inputText id="tipo" value="#{veiculoB.vei.tipo}" label="Tipo" required="true" maxlength="20"/>
+                    
+                    <h:outputLabel for="porte" value="Porte: " />
+                    <p:inputText id="porte" value="#{veiculoB.vei.porte}" label="Porte" required="true" maxlength="20"/>
+                    
+                    
+                </h:panelGrid>
+                <p:commandButton action="#{veiculoB.Salvar()}" value="Salvar" ajax="true" update="growl, panel" title="Salvar Pessoa Juridica" icon="ui-icon-check" validateClient="true"/>
+                
+            </p:panel>
+            
+        </h:form>
+    </h:body>
+</html>
+
+
+
+

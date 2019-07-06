@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:h="http://xmlns.jcp.org/jsf/html" 
+      xmlns:p="http://primefaces.org/ui" xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Cadastro Motorista</title>
+    </h:head>
+    <h:body>
+        <h:form id="Motorista">            
+            <p:growl id="growl" life="3500" autoUpdate="true"/>
+            <p:panel id="panel" header="Cadastro de Motorista" footer="Aluguel de Veiculos">
+                <h:panelGrid columns="2" cellpadding="5">
+                    
+                    <h:outputLabel for="primeiroNome" value="Primeiro Nome: "/>
+                    <p:inputText id="primeiroNome" value="#{motoristaB.mot.nome}" label="Primeiro nome" required="true" maxlength="20"/>
+
+                    <h:outputLabel for="ultimoNome" value="Último Nome: " />
+                    <p:inputText id="ultimoNome" value="#{motoristaB.mot.sobrenome}" label="Último nome" required="true" maxlength="20"/>
+
+                    <h:outputLabel for="cpf" value="CPF: " />
+                    <p:inputMask id="cpf" value="#{motoristaB.mot.cpf}" label="CPF" mask="999.999.999-99" required="true" maxlength="14"/>
+                    
+                    <h:outputLabel for="email" value="E-mail: " />
+                    <p:inputText id="email" value="#{motoristaB.mot.email}" label="email" required="true" maxlength="20"/>
+                    
+                    <h:outputLabel for="senha" value="Senha: " />
+                    <p:inputText id="senha" value="#{motoristaB.mot.senha}" type="password" label="senha" required="true" maxlength="20"/>
+                    
+                    
+                </h:panelGrid>
+                <p:commandButton action="#{motoristaB.Salvar()}" value="Salvar" ajax="true" update="growl, panel" title="Salvar Pessoa Juridica" icon="ui-icon-check" validateClient="true"/>
+                
+            </p:panel>
+            
+        </h:form>
+    </h:body>
+</html>
+
+
+
+

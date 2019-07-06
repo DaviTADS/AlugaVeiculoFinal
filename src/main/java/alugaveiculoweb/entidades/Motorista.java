@@ -61,9 +61,9 @@ public class Motorista extends Pessoa implements Serializable {
     @Column(name = "TXT_SOBRENOME", length = 60, nullable = false)
     private String sobrenome;
     
-    @NotNull
+    
     @Enumerated(EnumType.STRING)
-    @Column(name = "TXT_REPUTACAO", length = 20, nullable = false)
+    @Column(name = "TXT_REPUTACAO", length = 20, nullable = true)
     private Reputacao reputacao;
     
     @NotNull
