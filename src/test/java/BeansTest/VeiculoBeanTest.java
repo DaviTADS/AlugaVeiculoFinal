@@ -76,10 +76,10 @@ public class VeiculoBeanTest extends Teste {
     
     
     
-    @Test
-    public void VeiculoPorId() {
-        assertNotNull(veiculobean.consultarPorId(new Long(1)));
-    }
+//    @Test
+//    public void VeiculoPorId() {
+//        assertNotNull(veiculobean.consultarPorId(new Long(1)));
+//    }
     
 //    @Test
 //    public void consultaVeiculosComMotorista(){

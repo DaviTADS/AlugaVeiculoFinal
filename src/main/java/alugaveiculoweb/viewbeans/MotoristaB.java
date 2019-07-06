@@ -25,7 +25,7 @@ public class MotoristaB implements Serializable{
     
     @Inject
      private MotoristaBean motoristabean;
-     protected Motorista mot;
+     private Motorista mot;
 
      @PostConstruct
     public void init() {
@@ -44,6 +44,12 @@ public class MotoristaB implements Serializable{
     public void Salvar(){
         Persistir(mot);
     } 
+    
+    public void consultaMotorista(){
+        
+        mot = motoristabean.consultarMotoristaPorId(1L);
+        
+    }
 
     public MotoristaBean getMotoristabean() {
         return motoristabean;

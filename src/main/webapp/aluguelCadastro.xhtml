@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+
+        <h:form id="veiculo">            
+            <p:growl id="growl" life="3500" autoUpdate="true"/>
+            <p:panel id="panel" header="Criação aluguel" footer="Aluguel de Veiculos">
+                <h:panelGrid columns="2" cellpadding="5">
+
+                    <p:outputLabel for="dtinicio" value="Data de Início:" /> 
+                    <p:inputText id="dtinicio" value="#{aluguelB.alu.datainicio}" label="Data de Início" required="true" maxlength="20" />
+
+                    <p:outputLabel for="dtfinal" value="Data Final:" /> 
+                    <p:inputText id="dtfinal" value="#{aluguelB.alu.datafinal}" label="Data Final" required="true" maxlength="20" />
+
+
+
+                </h:panelGrid>
+
+                <p:commandButton action="#{aluguelB.Salvar()}" value="Salvar" ajax="true" update="growl, panel" title="Salvar Pessoa Juridica" icon="ui-icon-check" validateClient="true"/>
+
+            </p:panel>
+
+        </h:form> 
+
+    </h:body>
+</html>
+
