@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:h="http://xmlns.jcp.org/jsf/html" 
+      xmlns:p="http://primefaces.org/ui" xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Cadastro Pessoa</title>
+    </h:head>
+    <h:body>
+        <h:form id="Pessoaj">            
+            <p:growl id="growl" life="3500" autoUpdate="true"/>
+            <p:panel id="panel" header="Cadastro de PessoaJuridica" footer="Aluguel de Veiculos">
+                <h:panelGrid columns="2" cellpadding="5">
+                    
+                    <h:outputLabel for="nomeEmpresa" value="Nome Empresa: "/>
+                    <p:inputText id="nomeEmpresa" value="#{pessoaJ.pj.nome}" label="Nome Empresa" required="true" maxlength="20"/>
+
+                    <h:outputLabel for="razaoSocial" value="Razão Social: " />
+                    <p:inputText id="razaoSocial" value="#{pessoaJ.pj.razaosocial}" label="Razão Social" required="true" maxlength="20"/>
+
+                    <h:outputLabel for="cnpj" value="CNPJ: " />
+                    <p:inputMask id="cnpj" value="#{pessoaJ.pj.cnpj}" label="CNPJ" mask="99.999.999/9999-99" required="true" maxlength="14"/>
+                    
+                    <h:outputLabel for="email" value="E-mail: " />
+                    <p:inputText id="email" value="#{pessoaJ.pj.email}" label="email" required="true" maxlength="20"/>
+                    
+                    <h:outputLabel for="senha" value="Senha: " />
+                    <p:inputText id="senha" value="#{pessoaJ.pj.senha}" type="password" label="senha" required="true" maxlength="20"/>
+                    
+                    <h:outputLabel for="credito" value="Creditos: " />
+                    <p:inputText id="credito" value="#{pessoaJ.pj.creditos}" label="credito" required="true" maxlength="20"/>
+                    
+                    
+                </h:panelGrid>
+                <p:commandButton action="#{pessoaJ.Salvar()}" value="Salvar" ajax="true" update="growl, panel" title="Salvar Pessoa Juridica" icon="ui-icon-check" validateClient="true"/>
+                
+            </p:panel>
+            
+        </h:form>
+    </h:body>
+</html>
+
+
+
+
