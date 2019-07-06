@@ -47,7 +47,7 @@ public class MotoristaB implements Serializable{
     
     public void consultaMotorista(){
         
-        mot = motoristabean.consultarMotoristaPorId(1L);
+        motoristabean.consultarMotoristaPorId(1L);
         
     }
 

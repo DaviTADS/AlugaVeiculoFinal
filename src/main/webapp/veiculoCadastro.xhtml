@@ -1,13 +1,45 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"  xmlns:h="http://xmlns.jcp.org/jsf/html" 
-      xmlns:p="http://primefaces.org/ui" xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:p="http://primefaces.org/ui" xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Cadastro Veiculo</title>
     </h:head>
     <h:body>
+        <h2>AVW Software</h2>
         <h:form id="veiculo">            
             <p:growl id="growl" life="3500" autoUpdate="true"/>
+            <p:menubar>
+                <p:submenu label="Alugueis"> 
+                    <p:menuitem value="Alugar Veiculo" outcome="aluguelCadastro" icon="ui-icon-person" />
+                </p:submenu>
+
+                <p:submenu label="Motoristas"> 
+                    <p:menuitem value="Cadastrar Motorista" outcome="motoristaCadastro" icon="ui-icon-person"/>
+                    <p:menuitem value="Consulta" outcome="consultaMotorista" />
+                    <p:menuitem value="Alterar" url="#" />
+                    <p:menuitem value="Remover" url="#" />
+                </p:submenu>
+
+                <p:submenu label="Pessoas"> 
+                    <p:menuitem value="Cadastrar Pessoa Física" outcome="pessoafCadastro" icon="ui-icon-person"/>
+                    <p:menuitem value="Cadastrar Pessoa Juridica" outcome="pessoajCadastro" icon="ui-icon-person"/>
+                    <p:menuitem value="Alterar" url="#" outcome="pessoaEdicao" />
+                    <p:menuitem value="Remover" url="#" outcome="pessoaRemove" />
+                </p:submenu>
+
+                <p:submenu label="Veiculos"> 
+                    <p:menuitem value="Cadastrar" outcome="veiculoCadastro" icon="fa-car" />
+                    <p:menuitem value="Alterar" url="#" />
+                    <p:menuitem value="Remover" url="#" />
+                </p:submenu>
+
+                <f:facet name="options">
+                    <p:commandButton type="button" value="Logout" icon="pi pi-home" />
+                </f:facet>
+            </p:menubar>
+            
             <p:panel id="panel" header="Cadastro de Veiculo" footer="Aluguel de Veiculos">
                 <h:panelGrid columns="2" cellpadding="5">
                     

@@ -62,6 +62,13 @@ public class MotoristaBean {
         return em.find(Motorista.class, id);
     }
     
+    public String imprimeNome(@NotNull Long id){
+        Motorista mot = em.find(Motorista.class, id);
+        
+        return mot.getNome();
+        
+    }
+    
     
      
 //     

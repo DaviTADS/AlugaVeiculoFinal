@@ -9,9 +9,40 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-
+        <h2>AVW Software</h2>
         <h:form id="veiculo">            
             <p:growl id="growl" life="3500" autoUpdate="true"/>
+
+            <p:menubar>
+                <p:submenu label="Alugueis"> 
+                    <p:menuitem value="Alugar Veiculo" outcome="aluguelCadastro" icon="ui-icon-person" />
+                </p:submenu>
+
+                <p:submenu label="Motoristas"> 
+                    <p:menuitem value="Cadastrar Motorista" outcome="motoristaCadastro" icon="ui-icon-person"/>
+                    <p:menuitem value="Consulta" outcome="consultaMotorista" />
+                    <p:menuitem value="Alterar" url="#" />
+                    <p:menuitem value="Remover" url="#" />
+                </p:submenu>
+
+                <p:submenu label="Pessoas"> 
+                    <p:menuitem value="Cadastrar Pessoa Física" outcome="pessoafCadastro" icon="ui-icon-person"/>
+                    <p:menuitem value="Cadastrar Pessoa Juridica" outcome="pessoajCadastro" icon="ui-icon-person"/>
+                    <p:menuitem value="Alterar" url="#" outcome="pessoaEdicao" />
+                    <p:menuitem value="Remover" url="#" outcome="pessoaRemove" />
+                </p:submenu>
+
+                <p:submenu label="Veiculos"> 
+                    <p:menuitem value="Cadastrar" outcome="veiculoCadastro" icon="fa-car" />
+                    <p:menuitem value="Alterar" url="#" />
+                    <p:menuitem value="Remover" url="#" />
+                </p:submenu>
+
+                <f:facet name="options">
+                    <p:commandButton type="button" value="Logout" icon="pi pi-home" />
+                </f:facet>
+            </p:menubar>
+
             <p:panel id="panel" header="Criação aluguel" footer="Aluguel de Veiculos">
                 <h:panelGrid columns="2" cellpadding="5">
 
